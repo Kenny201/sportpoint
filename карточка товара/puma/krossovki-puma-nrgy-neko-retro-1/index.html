@@ -4892,22 +4892,25 @@ fill-rule: evenodd;
         </footer>
         <div class="popup-form-wrap">
             
-        
+            
             <div class="popup-form popup">
+                    <div class="popup-close">
+                        
+                    </div>
                     <div class="popup_header">
                         <div class="popup_title">
                             <span> Оставить отзыв </span>
                         </div>
                         <div class="popup_product product-p">
                             <div class="product-p_image">
-                                <img src="/upload/product-min-3.png" alt="">
+                                <img src="../../upload/product-min-3.png" alt="">
                             </div>
                             <div class="product-p_title">
                                 <span>Кроссовки Adidas edge lux 4 (цвет Розовый)</span>
                             </div>
                         </div>
                     </div>
-                    <form class="popup_content">
+                    <form class="popup_content" action="#">
                         <div class="popup_content_left">
                             <div class="form_field_block">
                                   <fieldset class="form_field rating_popup reviews_rating">
@@ -4984,21 +4987,21 @@ fill-rule: evenodd;
                             <div class="form_field_block">
                                                            <fieldset class="form_field">
                                 <legend class="product_property_title">Самое главное *</legend>
-                                <input type="text" size=" 50 " placeholder="Основное мнение о товаре" >  
+                                <input type="text" size=" 50 "  placeholder="Основное мнение о товаре" required >  
                             </fieldset>
                              <fieldset class="form_field">
                                 <legend class="product_property_title"> Текст отзыва *</legend>
-                                <textarea placeholder=" Сам отзыв" name="comment" cols="40" rows="3"></textarea>
+                                <textarea placeholder=" Сам отзыв" name="comment" cols="40" rows="3" required></textarea>
                             </fieldset>     
                             </div>
 
                              <fieldset class="form_field">
                                 <legend class="product_property_title">Личные данные *</legend>
-                                <input type="text" placeholder="Ваше имя" > 
-                                <input type="text" placeholder="Как с вами связаться" >  
+                                <input type="text" placeholder="Ваше имя" required > 
+                                <input type="text" placeholder="Как с вами связаться" required>  
                                 <div class="form_field_row">
                                     <div class="form_field_select">
-                                        <select name="list1">
+                                        <select name="list1" >
                                           <option>Ваш пол</option>
                                           <option>Мужчина</option>
                                           <option>Женщина</option> 
@@ -5023,7 +5026,7 @@ fill-rule: evenodd;
                         </div>
                     </form>
                    <div class="popup_footer">
-                        <span>
+                        <span class="popup_conditions">
                              Нажимая на кнопку "Отправить отзыв", ты соглашаешься с нашими Условиями
                         </span>
                         <button type="submit" class="popup_btn"> <span class="btn-text">Отправить отзыв</span></button>
@@ -5154,7 +5157,14 @@ fill-rule: evenodd;
             $(this).siblings().removeClass('_active');
             $(this).addClass('_active');
         });
-        
+        $('.reviews_button > button').click(function(){
+            $('#main .wrapper1 .popup-form-wrap ').css('display','flex');
+            $("html,body").css("overflow","hidden");
+        })
+        $('.popup-form-wrap .popup-close').click(function(){
+            $('#main .wrapper1 .popup-form-wrap').css('display','none');
+             $("html,body").css("overflow","auto");
+        })
         </script>
 </body>
 

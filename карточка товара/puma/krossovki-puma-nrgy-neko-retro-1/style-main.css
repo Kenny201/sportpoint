@@ -1186,23 +1186,52 @@
             animation: open .2s linear;
         }
         /*----------- форма ---------------*/
+
         #main .wrapper1 .popup-form-wrap {
+            display: none;
             position: fixed;
             width: 100%;
             height: 100%;
             top: 0;
             background-color: rgba(0, 0, 0, .56);
             z-index: 999;
-            display: flex;
+            height:100vh;
+            overflow:auto;
             justify-content: center;
 
         }
+        .popup-close {
+              height: 14px;
+              width: 14px;
+              display: block;
+              background-color: #fff;
+              color: white;
+              position: absolute;
+              float: right;
+              right: 15px;
+              top: 20px;
+              font-size: 24px;
+              line-height: 24px;
+              text-align: center;
+              border: 1px solid #111;
+              padding:  20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+            }
+
+            .popup-close::before {
+              content: "+";
+              color:  #111;
+              transform: rotate(45deg);
+              font-size: 34px;
+            }
 
         .popup-form.popup {
-            top: 18%;
-
+            top: 2%;
             display: block;
-            padding: 66px 30px;
+            padding: 50px 35px 30px 35px;
             background: #fff;
             max-width: 1064px;
             width: 100%;
@@ -1344,18 +1373,20 @@
         .reviews_property legend {
             border: none;
         }
-        input::-webkit-input-placeholder { font-size: 13px; }
-        input:-ms-input-placeholder { font-size: 13px; }
-        input::-ms-input-placeholder { font-size: 13px; }
-        input::placeholder { font-size: 13px; } 
-        textarea::-webkit-input-placeholder { font-size: 13px; }
-        textarea:-ms-input-placeholder { font-size: 13px; }
-        textarea::-ms-input-placeholder { font-size: 13px; }
-        textarea::placeholder { font-size: 13px; } 
+        .form_field input::-webkit-input-placeholder { font-size: 13px; }
+        .form_field input:-ms-input-placeholder { font-size: 13px; }
+        .form_field input::-ms-input-placeholder { font-size: 13px; }
+        .form_field input::placeholder { font-size: 13px; } 
+        .form_field textarea::-webkit-input-placeholder { font-size: 13px; }
+        .form_field textarea:-ms-input-placeholder { font-size: 13px; }
+        .form_field textarea::-ms-input-placeholder { font-size: 13px; }
+        .form_field textarea::placeholder { font-size: 13px; } 
         .form_field input[type=text], .form_field textarea{
             padding: 15px 0 15px 10px;
         }
-         
+        .form_field textarea{
+            resize: none;
+         }
         .form_field_select select{
             font-size: 13px;
         }
@@ -1375,7 +1406,7 @@
             background-size: cover;
         }
 
-        .form_field_select {
+        .form_field_select select{
             padding: 15px 15px 15px 5px;
         }
 
@@ -1398,7 +1429,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            padding: 0;
+
             height: auto;
             color: #888888;
 
@@ -1429,15 +1460,8 @@
             position: relative;
            
         }
-        .popup_footer > span{
-              display: flex;
-            align-items: center;
-            font-size: 13px;
-            color:  #111;
-            display: block;
-            margin: 0 20px 0 0;
-        }
-        .popup_btn .btn-text{
+
+               .popup_btn .btn-text{
             display: flex;
             align-items: center;
         }
@@ -1456,8 +1480,21 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
+            align-items: center;
 
         }
+       .popup_footer .popup_conditions{
+            max-width: 315px;
+            width: 100%;
+            font-size: 13px;
+            color:  #111;
+            display: block;
+            margin: 0 0 20px 0;
+            display:    flex;
+            align-items: center;
+            
+        }
+
         /*-----END------*/
         @media (min-width: 375px) {
             .product-container .share.hover-block_mob {
@@ -1864,7 +1901,16 @@
 
         @media (min-width: 650px) {
 
+              .popup_footer{
+           
+            flex-direction: row;
 
+
+                }
+             .popup_footer .popup_conditions{
+                    max-width: 100%;
+                    margin:  0 20px 0 0;
+             }
             .add-favorites {
                 right: 0;
             }
@@ -1953,8 +1999,15 @@
         }
 
         @media (min-width: 992px) {
+            .form_field_select select{
+                padding: 15px 51px 15px 5px;
+            }
+            .form_field_select::after {
+                width: 8px;
+                height: 8px;
+            }
             .popup-form.popup{
-                padding: 66px 70px;
+                padding: 55px 77px 55px 73px;
             }
             .product-container {
                 flex-direction: row;
