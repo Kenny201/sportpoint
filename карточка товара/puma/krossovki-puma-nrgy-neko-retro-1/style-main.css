@@ -45,14 +45,16 @@ html {
     padding: 5px 15px;
 }
 
+
 .product-container .sticker_sale, .similar_item .sticker_sale {
     background: none;
     padding: 4px 5px;
+    background-color: #fff;
     border: 1px solid #DB2138;
     color: #DB2138;
 }
  .product-container .sticker_new, .similar_item .sticker_new  {
-    background: none;
+    background-color: #fff;
     padding: 4px 5px;
     border: 1px solid #111;
     color: #111;
@@ -380,7 +382,7 @@ border-bottom: 1px solid #111;
     margin: 50px 0 0 0;
 }
 
-.product_reviews_head {
+.product_reviews_head.section_title {
     display: flex;
     justify-content: space-between;
     margin: 0 0 15px 0;
@@ -809,6 +811,7 @@ border-bottom: 1px solid #111;
 .share-icon {
     width: 120px;
     border: 1px solid #DDDDDD;
+    background-color: #fff;
 }
 
 .product-container .wrapp-one-click {
@@ -1127,11 +1130,14 @@ body .product-side div + .char-side{
     margin: 0;
 
 }
-.similar_item_image .section-gallery-wrapper__item img{
-    opacity: 1;
-
+.image_wrapper_block img{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
-.recommend_title{
+
+.section_title{
     margin: 0 0 30px 0;
 }
 .similar_available{
@@ -1166,11 +1172,7 @@ details[open] summary ~ * {
    display: flex;
    justify-content: center;
 }
-a.slider-mob{
-    
-    left: -16px;
-    width: 108%;
-}
+
 /*----------- форма ---------------*/
 
 #main .wrapper1 .popup-form-wrap {
@@ -1255,9 +1257,13 @@ a.slider-mob{
 }
 
 .product-p_image {
+  
     margin: 0 30px 0 0;
 }
-
+.product-p_image img{
+    width: 70px;
+    height: 64px;
+}
 .popup_header {
     padding: 0 0 30px 0;
 
@@ -1746,9 +1752,10 @@ a.slider-mob{
 
     .image_wrapper_block img {
         position: relative;
+
     }
     .product-detail-gallery .owl-carousel .owl-item img{
-        height: 715px;
+        max-height: 715px;
     }
     .vertical-catalog-img .image_wrapper_block {
         padding-top: 0;
@@ -2163,7 +2170,7 @@ justify-content: space-between;
     }
     .image_wrapper_block{
         position: sticky;
-        top: 30px;
+
     }
      
 }
