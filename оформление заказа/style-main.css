@@ -135,7 +135,71 @@
 	display: flex;
 	left:0;
 }
+
+@media (min-width: 993px){
+	.advantages{
+		display: block;	
+	}
+	.advantages-item:nth-child(1) .advantages-desc{
+		top: -92px;
+	}
+	.advantages-item:nth-child(2) .advantages-desc{
+		top: -82px;
+	}
+	.advantages-item:nth-child(3) .advantages-desc{
+		top: -82px;
+	}
+	.advantages-item:nth-child(4) .advantages-desc{
+		top: -92px;
+	}
+	.advantages-desc:before {
+	
+		top:93%;
+	
+	}
+}
+@media (min-width: 1024px){
+
+	.advantages-inner {
+		padding: 25px 25px;
+		border: 1px solid #000000;
+		box-shadow: 4px 4px 0px #000000;
+	}
+}
+@media (min-width: 1052px){
+
+	.advantages-item:nth-child(3) .advantages-desc{
+		top: -92px;
+	}
+
+}
+@media (min-width: 1100px){
+	
+	.advantages-item:nth-child(3) .advantages-desc{
+		top: -82px;
+	}
+	
+	.advantages-inner {
+		padding: 25px 25px;
+		border: 1px solid #000000;
+		box-shadow: 4px 4px 0px #000000;
+	}
+}
+@media (min-width: 1200px){
+.advantages-inner{
+	padding: 35px 35px;
+}
+}
+@media (min-width: 1337px){
+
+	.advantages-item:nth-child(3) .advantages-desc{
+		top: -92px;
+	}
+
+}
+@media (min-width: 1400px){
 .advantages-item:nth-child(1) .advantages-desc{
+<<<<<<< HEAD
 	top: -6rem;
 }
 .advantages-item:nth-child(2) .advantages-desc{
@@ -176,5 +240,48 @@
 	}
 	.advantages-item:nth-child(4) .advantages-desc{
 		top: -4.5rem;
+=======
+	top: -102px;
+}
+}
+@media (min-width: 1403px){
+	.advantages-item:nth-child(1) .advantages-desc{
+		top: -102px;
+	}
+	.advantages-item:nth-child(2) .advantages-desc{
+		top: -82px;
+	}
+	.advantages-item:nth-child(3) .advantages-desc{
+		top: -92px;
+	}
+	.advantages-item:nth-child(4) .advantages-desc{
+		top: -92px;
+	}
+}
+@media (min-width: 1425px){
+	
+	.advantages-item:nth-child(2) .advantages-desc{
+		top: -92px;
+	}
+
+}
+@media (min-width: 1545px){
+	.advantages-item:nth-child(1) .advantages-desc{
+		top: -78px;
+	}
+	.advantages-item:nth-child(2) .advantages-desc{
+		top: -68px;
+	}
+	.advantages-item:nth-child(3) .advantages-desc{
+		top: -68px;
+	}
+	.advantages-item:nth-child(4) .advantages-desc{
+		top: -78px;
+	}
+	.advantages-desc:before {
+	
+		top:90%;
+	
+>>>>>>> 715c22f3e163185721989a8faec2ce0d0aa6e468
 	}
 }
