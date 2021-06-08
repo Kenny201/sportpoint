@@ -4205,10 +4205,9 @@
 								</div> <noscript>
 									<div style="color:red">Для оформления заказа необходимо включить JavaScript. По-видимому, JavaScript либо не поддерживается браузером, либо отключен. Измените настройки браузера и затем <a href="">повторите попытку</a>.</div>
 								</noscript>
-								<div  method="POST" name="ORDER_FORM" id="bx-soa-order-form" enctype="multipart/form-data">
-									<input type="hidden" name="sessid" id="sessid" value="13df6f10498738d490c154ebeb807928"> <input type="hidden" name="soa-action" value="saveOrderAjax">
-									<input type="hidden" name="location_type" value="code">
-									<input type="hidden" name="BUYER_STORE" id="BUYER_STORE" value="0">
+								<form method="POST" action="#" name="ORDER_FORM" id="bx-soa-order-form" enctype="multipart/form-data">
+									
+		
 									<div id="bx-soa-order" class="row orderform--v1 bx-blue">
 										<!--	MAIN BLOCK	-->
 										<div class="col-sm-9 bx-soa order-wrap">
@@ -4237,42 +4236,33 @@
 												</div>
 											</div>
 											<!--	REGION BLOCK	-->
-											<form id="bx-soa-region"  method="post"  action="" data-visited="true" class="bx-soa-section bx-active bx-selected">
+											<div id="bx-soa-region" data-visited="true" class="bx-soa-section bx-active bx-selected">
 												<div class="bx-soa-section-title-container">
 													<h2 class="bx-soa-section-title col-sm-9">
-														<span class="bx-soa-section-title-count"></span>Город доставки </h2>
+														<span class="bx-soa-section-title-count"></span>Город доставки						</h2>
 												</div>
-												<div class="bx-soa-section-content container-fluid">
-													<div style="display: none;" class="alert alert-danger"></div>
-													<div class="bx_soa_location row">
-														<div class="col-xs-12"><input type="hidden" name="PERSON_TYPE" value="1">
-															<div  id="city_delivery" class="form-group bx-soa-location-input-container"><label class="bx-soa-custom-label" for="soa-property-6"> Город доставки<span class="bx-authform-starrequired"> *</span></label>
-																<div id="sls-37935" class="bx-sls ">
+												<div class="bx-soa-section-content container-fluid"><div class="alert alert-danger" style="display: none;"></div><div class="bx_soa_location row"><div class="col-xs-12"><input type="hidden" name="PERSON_TYPE" value="1"><div data-property-id-row="6" class="form-group bx-soa-location-input-container"><label class="bx-soa-custom-label" for="soa-property-6"> Город доставки<span class="bx-authform-starrequired"> *</span></label>				
+														<div id="sls-85186" class="bx-sls ">
 																	<div class="dropdown-block bx-ui-sls-input-block form-control">
-																		<span class="dropdown-icon"></span>
-																		<input type="text" autocomplete="off" name="ORDER_PROP_6" value="0000583577" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
-																		<div style="margin: 0px; padding: 0px; border: medium none; position: relative;" class="bx-ui-sls-container"><input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;" value="">
-																		<input type="text" id="city_delivery" name="city_delivery" autocomplete="off"  class="bx-ui-sls-fake" placeholder="Введите название ..." title="Киров, Кировская область, Поволжье, Россия"></div>
-																		<div class="dropdown-fade2white"></div>
-																		<div class="bx-ui-sls-loader"></div>
-																		<div class="bx-ui-sls-clear" title="Отменить выбор" style="display: block;"></div>
-																		<div class="bx-ui-sls-pane" style="overflow: hidden auto; display: none;">
-																			<div class="bx-ui-sls-variants"></div>
+																<span class="dropdown-icon"></span>
+																<input type="text" autocomplete="off" name="ORDER_PROP_6" value="0000583577" class="dropdown-field" placeholder="Введите название ..." style="display: none;"><div class="bx-ui-sls-container" style="margin: 0px; padding: 0px; border: none; position: relative;"><input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;"><input type="text" autocomplete="off" value="0000583577" class="bx-ui-sls-fake" placeholder="Введите название ..." title="Киров, Кировская область, Поволжье, Россия"></div>
+																<div class="dropdown-fade2white"></div>
+																<div class="bx-ui-sls-loader"></div>
+																<div class="bx-ui-sls-clear" title="Отменить выбор" style="display: block;"></div>
+																<div class="bx-ui-sls-pane" style="overflow: hidden auto; display: none;"><div class="bx-ui-sls-variants"></div></div>
+															</div>
+															<div class="bx-ui-sls-error-message">
 																		</div>
-																	</div>
-																	<div class="bx-ui-sls-error-message">
-																	</div>
-																</div>
-																<div class="step_wrap">
-																<div class="step_next"> 
-																	<button type="submit" class="btn btn-default"> Далее </button></div></div>
-																</div>
-														
 														</div>
+													</div><input type="hidden" name="RECENT_DELIVERY_VALUE" value="0000583577"><div class="bx-soa-reference"></div></div></div>
+													<div class="step_wrap">
+														<div class="step_next">
+															<button class="btn btn-default"> Далее </button>
+														</div>
+														
 													</div>
-												
 												</div>
-											</form>
+											</div>
 											
 												<!--	DELIVERY BLOCK	-->
 												<div id="bx-soa-delivery" data-visited="true" class="bx-soa-section bx-active">
@@ -4373,7 +4363,6 @@
 															<label for="soa-property-1" class="bx-soa-custom-label"> Ф.И.О.
 															<span class="bx-authform-starrequired"> *</span>
 															</label>
-
 																<div class="soa-property-container">
 																<input type="text" size="40" name="ORDER_PROP_1" id="soa-property-1" autocomplete="name" placeholder="Имя" class=" w-50  form-control bx-soa-customer-input bx-ios-fix">
 																<input type="text" size="40" name="ORDER_PROP_2" id="soa-property-2" autocomplete="name" placeholder="Фамилия" class=" w-50  form-control bx-soa-customer-input bx-ios-fix">
@@ -4509,7 +4498,7 @@
 												<div class="licence_block filter label_block onoff"><label for="check" data-for="licenses_order" class="hidden error">Согласитесь с условиями</label><input  id="check" type="checkbox"  checked name="licenses_order" value="Y" checked><label  class="license">Я согласен на <a href="https://sportpoint.ru/include/licenses_detail.php" target="_blank">обработку персональных данных</a></label></div>
 											</div>
 											<div id="bx-soa-orderSave" class="lic_condition">
-												<a href="javascript:void(0)" style="margin: 10px 0" class="pull-right btn btn-default btn-lg hidden-xs has-ripple" data-save-button="true"> Оформить заказ </a>
+												<button type="submit" style="margin: 10px 0" class="pull-right btn btn-default btn-lg hidden-xs has-ripple" data-save-button="true"> Оформить заказ </button>
 											</div>
 											<div style="display: none;">
 												<div id="bx-soa-basket-hidden" class="bx-soa-section">
@@ -4707,7 +4696,7 @@
 											
 										</div>
 									</div>
-								</div>
+								</form>
 								<div id="bx-soa-saved-files" style="display:none"></div>
 								<div id="bx-soa-soc-auth-services" style="display:none">
 									<div class="bx-authform-social">
@@ -4719,9 +4708,8 @@
 														<span class="bx-ss-icon livejournal"></span>
 														<input type="text" name="OPENID_IDENTITY_LIVEJOURNAL" size="20">
 														<span>.livejournal.com</span>
-														<input type="hidden" name="sessid" id="sessid_1" value="13df6f10498738d490c154ebeb807928">
-														<input type="hidden" name="auth_service_error" value="">
-														<input type="submit" class="button" name="" value="Войти">
+								
+														<input type="submit" class="button" value="Войти">
 														<input type="hidden" name="auth_service_id" value="Livejournal">
 													</form>
 												</div>
@@ -4735,7 +4723,7 @@
 														<span>@mail.ru</span>
 														<input type="hidden" name="sessid" id="sessid_2" value="13df6f10498738d490c154ebeb807928">
 														<input type="hidden" name="auth_service_error" value="">
-														<input type="submit" class="button" name="" value="Войти">
+			
 														<input type="hidden" name="auth_service_id" value="MailRuOpenID">
 													</form>
 												</div>
@@ -4749,7 +4737,7 @@
 														<input type="text" name="OPENID_IDENTITY_LIVEINTERNET" size="15">
 														<input type="hidden" name="sessid" id="sessid_3" value="13df6f10498738d490c154ebeb807928">
 														<input type="hidden" name="auth_service_error" value="">
-														<input type="submit" class="button" name="" value="Войти">
+														
 														<input type="hidden" name="auth_service_id" value="Liveinternet">
 													</form>
 												</div>
@@ -4763,7 +4751,7 @@
 														<input type="text" name="OPENID_IDENTITY_OPENID" size="30">
 														<input type="hidden" name="sessid" id="sessid_4" value="13df6f10498738d490c154ebeb807928">
 														<input type="hidden" name="auth_service_error" value="">
-														<input type="submit" class="button" name="" value="Войти">
+														
 														<input type="hidden" name="auth_service_id" value="OpenID">
 													</form>
 												</div>
@@ -4777,7 +4765,7 @@
 										<div class="bx-ui-slst-pool">
 											<div class="dropdown-block bx-ui-slst-input-block">
 												<span class="dropdown-icon"></span>
-												<input type="text" name="" autocomplete="off" class="dropdown-field" style="display: none;">
+												<input type="text"  autocomplete="off" class="dropdown-field" style="display: none;">
 												<div class="bx-ui-combobox-container" style="margin: 0px; padding: 0px; border: none; position: relative;">
 													<input type="text" autocomplete="off" class="bx-ui-combobox-fake" placeholder="Выберите местоположение ...">
 												</div>
@@ -5082,10 +5070,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- marketnig popups -->
-		<!--'start_frame_cache_8gJilP'-->
-		<!--'end_frame_cache_8gJilP'-->
-		<!-- /marketnig popups -->
+	
 	</footer>
 	
 	<div class="inline-search-block fixed with-close big">
