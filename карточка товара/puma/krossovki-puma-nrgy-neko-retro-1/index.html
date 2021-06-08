@@ -6242,16 +6242,16 @@ fill-rule: evenodd;
                                                             </div>
                                                             <div class="reviews_user_property">
                                                                 <div class="reviews_user_gender">
-                                                                    <span class="user_prop_title">Пол:</span>
-                                                                    <span class="user_prop_caption">Женский</span>
+                                                                    <span class="user_prop_title">Пол: </span>
+                                                                    <span class="user_prop_caption"> Женский</span>
                                                                 </div>
                                                                 <div class="reviews_user_style">
-                                                                    <span class="user_prop_title">Спорт:</span>
-                                                                    <span class="user_prop_caption">Бег</span>
+                                                                    <span class="user_prop_title">Спорт: </span>
+                                                                    <span class="user_prop_caption"> Бег</span>
                                                                 </div>
                                                                 <div class="reviews_user_style">
-                                                                    <span class="user_prop_title">Размер:</span>
-                                                                    <span class="user_prop_caption">5</span>
+                                                                    <span class="user_prop_title">Размер: </span>
+                                                                    <span class="user_prop_caption"> 5</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -7067,6 +7067,10 @@ fill-rule: evenodd;
             $(this).addClass('_active');
         });
         $(document).on('mouseenter', '.section-gallery-wrapper .section-gallery-wrapper__item', function() {
+            $(this).siblings().removeClass('_active');
+            $(this).addClass('_active');
+        });
+        $(document).on('touchstart', '.section-gallery-wrapper .section-gallery-wrapper__item', function() {
             $(this).siblings().removeClass('_active');
             $(this).addClass('_active');
         });

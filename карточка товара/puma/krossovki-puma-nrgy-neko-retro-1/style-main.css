@@ -437,12 +437,14 @@ border-bottom: 1px solid #111;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-  
     padding: 0;
     height: auto;
      color:  #888888;
 }
-
+.reviews_filter select option{
+    padding: 0 0 15px 0;
+    display: block;
+}
 .reviews_filter:after {
     content: " ";
     display: block;
@@ -499,7 +501,8 @@ border-bottom: 1px solid #111;
 .reviews_user_property {
     display: flex;
     justify-content: space-between;
-    width: 311px;
+    max-width: 311px;
+    width: 100%;
     flex-direction: column;
 }
 
@@ -557,6 +560,14 @@ border-bottom: 1px solid #111;
     background: url('images/range.svg') no-repeat center;
     background-size: cover;
 }
+.reviews_right_block input[type=range]::-webkit-slider-runnable-track {
+    background-size: contain;
+}
+.popup-form-wrap .product_property_range input[type=range]::-webkit-slider-runnable-track {
+
+    background-size: contain;
+}
+
 
 .product_property_range input[type=range]::-moz-range-track {
     -moz-appearance: none;
@@ -666,6 +677,7 @@ border-bottom: 1px solid #111;
 .user_prop_title {
     color: #999999;
     position: relative;
+    margin: 0 5px 0 0;
 }
 
 
@@ -950,12 +962,13 @@ body .product-side.left_block .cost {
 }
 
 .section-gallery-wrapper__item {
-
     width: 35px;
     background-color: #fff;
     margin-bottom: 30px;
 }
-
+.product-view a.slider-mob .section-gallery-wrapper__item{
+    width: 55px;
+}
 ._active .section-gallery-wrapper__item-nav:before {
     background-color: #DB2138;
 }
@@ -992,7 +1005,10 @@ body .product-side.left_block .cost {
 .price_currency-custom {
     font-weight: 900;
 }
-
+.similar_item_price {
+    display: flex;
+    flex-direction: column;
+}
 .similar_item_price .price_currency-custom {
     font-size: 1.23rem;
     margin-right: 5px;
@@ -1244,8 +1260,9 @@ details[open] summary ~ * {
     position: absolute;
     max-width: 1064px;
     padding: 50px 35px 30px 35px;
- 
     background: #fff;
+    min-height: 100%;
+    max-height: none;
 }
 
 .popup_product.product-p {
@@ -1614,20 +1631,28 @@ details[open] summary ~ * {
     }
 
     .reviews_rating_wrap {
-
         width: 183px;
-
     }
     .product_property_range input[type="range"]{
      max-width: 407px;
      width: 100%;
-}
+    }
 .product_property_range{
     width: 80%;
 
 }
+.popup-form-wrap .popup-form.popup .product_property_range input[type=range]::-webkit-slider-runnable-track {
+  
+    background-size: cover;
+}
 }
 @media (min-width: 420px) {
+    .similar_item_price {
+        flex-direction: row;
+    }
+    .product_property_range input[type=range]::-webkit-slider-runnable-track {
+        background-size: cover;
+    }
     .product-container .button_block.wide {
 
         width: 100%;
@@ -1635,6 +1660,8 @@ details[open] summary ~ * {
 
     .price-main-block {
         flex-direction: row;
+        justify-content: space-between;
+        min-width: 180px;
     }
 
     .product-container .offer_buy_block.buys_wrapp {
@@ -1662,6 +1689,10 @@ details[open] summary ~ * {
    
 }
 @media (min-width: 576px) {
+    .price-main-block {
+
+        min-width: 200px;
+    }
     .product-detail_block_mob .product_article{ display: flex; }
     .product_article-name{
         display: flex;
@@ -1709,6 +1740,7 @@ details[open] summary ~ * {
     .reviews_filter{
         margin: 25px 0 15px 0;
     }
+ 
     .product_property_inner{
         border: 1px solid #111;
         padding: 30px;
@@ -1951,7 +1983,10 @@ justify-content: space-between;
 .similar_item_image .section-gallery-wrapper__item:not("._active") {
     display: block;
 }
+.popup-form-wrap .popup-form.popup .product_property_range input[type=range]::-webkit-slider-runnable-track {
 
+    background-size: contain;
+}
 }
 
 @media (min-width: 650px) {
@@ -2043,6 +2078,10 @@ justify-content: space-between;
  .similar_available .item-stock {
     margin: 0 50px 0 0;
  }
+ .popup-form-wrap .popup-form.popup .product_property_range input[type=range]::-webkit-slider-runnable-track {
+  
+    background-size: cover;
+}
  
 }
 @media (min-width: 992px) {
@@ -2185,6 +2224,10 @@ justify-content: space-between;
 
 @media (min-width: 1024px) {
     .popup-form-wrap .popup-form.popup {
+      
+        min-height: auto;
+    }
+    .popup-form-wrap .popup-form.popup {
         top: 50%;
         transform: translate(-50%,-50%);
         left: 50%;
@@ -2205,7 +2248,7 @@ justify-content: space-between;
         width: 312px;
     }
     .user_prop_title::after{
-        left: -18px;
+        left: -15px;
     }
 }
 

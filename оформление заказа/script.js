@@ -1,7 +1,7 @@
+$("#soa-property-4").mask("+7(999) 999-9999");
 $(document).on('click', '.bx-soa .licence_block label.license', function(){
                     var id = $(this).data('for');
                     $('.bx-soa .licence_block label.error').addClass('hidden');
-                    
                     if(!$('input[name='+id+']').prop('checked')){
                       $('input[name='+id+']').prop('checked', 'checked');
                       BX.Sale.OrderAjaxComponent.state_licence = 'checked';
@@ -11,7 +11,6 @@ $(document).on('click', '.bx-soa .licence_block label.license', function(){
                       BX.Sale.OrderAjaxComponent.state_licence = '';
                     }
 });
-
 $(document).ready(function() {
   $('.bx-soa-section-content').on('click','.step_next', function(e) {
       e.preventDefault();
@@ -36,17 +35,33 @@ $(document).ready(function() {
         }
       } 
   });
-
-  $('.bx-soa-section-content').on('click', '.step_prev', function (e) {
-      e.preventDefault();
-      let prev = $(this).parents('.bx-soa-section').prev('.bx-soa-section').find('.bx-soa-section-content');
-      let content = $(this).parents('.bx-soa-section-content');
-      if ($(this).parents('.bx-soa-section').attr('id') == 'bx-soa-basket'){
-          $(this).hide();
-          prev.slideDown(350, "linear");
-      }else{
-          prev.slideDown(350, "linear");
-          content.slideUp(350, "linear");
-      }
+    $('.bx-soa-section-content').on('click', '.step_prev', function (e) {
+        e.preventDefault();
+        let prev = $(this).parents('.bx-soa-section').prev('.bx-soa-section').find('.bx-soa-section-content');
+        let content = $(this).parents('.bx-soa-section-content');
+        if ( prev.find('.step_next').length || prev.find('.step_prev').length){
+              prev.find('.step_prev').show();
+          }else {
+            prev.find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>')
+            prev.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
+        } 
+        if ($(this).parents('.bx-soa-section').attr('id') == 'bx-soa-basket'){
+              $(this).hide();
+              prev.slideDown(350, "linear");
+        }else{
+              prev.slideDown(350, "linear");
+              content.slideUp(350, "linear");
+        }
   });
+  $('.bx-soa > .bx-soa-section:not("#bx-soa-basket") .bx-soa-section-title-container').click(function(){
+    let current = $(this);
+    if ( current.parents('.bx-soa-section').find('.step_next').length || current.parents('.bx-soa-section').find('.step_prev').length){
+      current.parents('.bx-soa-section').find('.step_prev').show();
+    }else {
+      current.parents('.bx-soa-section').find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>')
+      current.parents('.bx-soa-section').find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
+    }
+    current.parents('.bx-soa').find('.bx-soa-section:not("#bx-soa-basket")').find('.bx-soa-section-content').hide();
+    current.parents('.bx-soa-section').find('.bx-soa-section-content').show();
+    });
 });
