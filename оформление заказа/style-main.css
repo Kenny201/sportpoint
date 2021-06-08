@@ -136,13 +136,28 @@
 	flex-direction: column;
 	gap: 30px 0;
 }
-
+#bx-soa-order .bx-soa-pp-item-container .bx-soa-pp-company{
+	margin: 0 0 20px 0;
+}
+.form-date{
+	margin: 0 0 20px 0;
+}
+.form-time label, .form-date label{
+	margin: 0 5px 10px 0;
+}
+.form-time input , .form-date input{
+	border: 1px solid #ececec;
+	background: #f7f7f7;		
+}
 @media (min-width: 520px){
-	
+	.form-time label, .form-date label{
+		margin: 0 20px 10px 0;
+	}
 	.soa-property-container{
 		flex-direction: row;
 		gap:  0 55px;
 	}
+	
 	#bx-soa-order #bx-soa-basket .bx-soa-item-table .bx-soa-item-tr .bx-soa-item-td.bx-soa-item-properties{
 		width: 49% !important;
 	}
