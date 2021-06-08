@@ -15,53 +15,30 @@ $(document).ready(function() {
   $('.bx-soa-section-content').on('click','.step_next', function(e) {
       e.preventDefault();
       let current = $(this),
-      next = current.parents('.bx-soa-section').next('.bx-soa-section').find('.bx-soa-section-content');  
-      let content = current.parents('.bx-soa-section-content');
-      if ( next.find('.step_next').length || next.find('.step_prev').length){
-          content.slideUp(350, "linear");
-          next.slideDown(350, "linear");
-          next.find('.step_prev').show();
+      currentContent = current.parents('.bx-soa-section').find('.bx-soa-section-content'),
+      next = current.parents('.bx-soa-section').next('.bx-soa-section:not("#bx-soa-basket")').find('.bx-soa-section-content'), 
+      content = current.parents('.bx-soa-section-content');
+      
+      if ( next.find('.step_next').length){
+          currentContent.find('.step_wrap').show();
       }else {
-        content.slideUp(350, "linear");
-        next.slideDown(350, "linear");
+        next.slideUp(350, "linear");
         next.find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>')
-        next.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
-        if (current.parents('.bx-soa-section').next('.bx-soa-section').attr('id') == 'bx-soa-basket'){
-          next.find('.step_prev').show();
-          next.find('.step_next').hide();
-        }else{
-          next.find('.step_prev').show();
-          next.find('.step_next').show();
-        }
+        next.slideDown(350, "linear");
+        next.find('.step_wrap').show();
+        currentContent.find('.step_wrap').hide();
       } 
   });
-    $('.bx-soa-section-content').on('click', '.step_prev', function (e) {
-        e.preventDefault();
-        let prev = $(this).parents('.bx-soa-section').prev('.bx-soa-section').find('.bx-soa-section-content');
-        let content = $(this).parents('.bx-soa-section-content');
-        if ( prev.find('.step_next').length || prev.find('.step_prev').length){
-              prev.find('.step_prev').show();
-          }else {
-            prev.find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>')
-            prev.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
-        } 
-        if ($(this).parents('.bx-soa-section').attr('id') == 'bx-soa-basket'){
-              $(this).hide();
-              prev.slideDown(350, "linear");
-        }else{
-              prev.slideDown(350, "linear");
-              content.slideUp(350, "linear");
-        }
-  });
+  
   $('.bx-soa > .bx-soa-section:not("#bx-soa-basket") .bx-soa-section-title-container').click(function(){
     let current = $(this);
-    if ( current.parents('.bx-soa-section').find('.step_next').length || current.parents('.bx-soa-section').find('.step_prev').length){
-      current.parents('.bx-soa-section').find('.step_prev').show();
+    if ( current.parents('.bx-soa-section').find('.step_next').length){
+      current.parents('.bx-soa-section').find('.step_wrap').show();
     }else {
       current.parents('.bx-soa-section').find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>')
-      current.parents('.bx-soa-section').find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
     }
-    current.parents('.bx-soa').find('.bx-soa-section:not("#bx-soa-basket")').find('.bx-soa-section-content').hide();
+    current.parents('.bx-soa').find('.bx-soa-section:not("#bx-soa-basket")').find('.step_wrap').hide();
+    current.parents('.bx-soa-section').find('.step_wrap').show();
     current.parents('.bx-soa-section').find('.bx-soa-section-content').show();
     });
 });

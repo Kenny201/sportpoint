@@ -160,6 +160,10 @@
 .bx-soa-customer-input{
 	position: relative;
 }
+#bx-soa-orderSave{
+	display: flex;
+	justify-content: center;
+}
 @media (min-width: 520px){
 	.form-time label, .form-date label{
 		margin: 0 20px 10px 0;
