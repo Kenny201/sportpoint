@@ -1605,21 +1605,12 @@ details[open] summary ~ * {
     position: absolute;
     bottom: 20px;
     z-index: 999;
-  
-
 }
 .product-detail-gallery .owl-dots .owl-dot span{
     width: 33px;
-height: 1px;
-margin: 5px 5px;
-background: #D6D6D6;
-display: block;
--webkit-backface-visibility: visible;
-transition: opacity 200ms ease;
-border-radius: 0px;
-}
-.product-detail-gallery .owl-dots .owl-dot.active span{
-    bac
+    height: 1px;
+    margin: 5px 5px;
+    border-radius: 0px;
 }
 /*-----END------*/
 @media (min-width: 375px) {
