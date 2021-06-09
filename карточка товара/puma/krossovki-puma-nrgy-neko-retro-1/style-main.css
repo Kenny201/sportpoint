@@ -1711,6 +1711,7 @@ details[open] summary ~ * {
    
 }
 @media (min-width: 576px) {
+  
     .price-main-block {
 
         min-width: 200px;
@@ -1804,10 +1805,6 @@ details[open] summary ~ * {
         margin: 0;
     }
 
-
-  
-
-    
     .product-container .slider-nav {
 
         display: flex;
@@ -1850,8 +1847,8 @@ details[open] summary ~ * {
         justify-content: space-between;
     }
 
-    .topic-tablet {
-        display: block;
+    .product-detail-gallery .owl-dots{
+        display: none;
     }
 
     .topic {
