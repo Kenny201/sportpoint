@@ -1589,14 +1589,20 @@ details[open] summary ~ * {
 .product-detail-gallery .owl-carousel .owl-item img{
     max-height: 715px;
 }
-.image_wrapper_block img {
+
+
+.image_wrapper_block .product-detail-gallery img {
     position: relative;
 
 }
-
 .vertical-catalog-img .image_wrapper_block {
+    padding-top: 95%;
+}
+
+.vertical-catalog-img .product-view .image_wrapper_block {
     padding-top: 0;
 }
+
 .product-detail-gallery .owl-carousel   {
     display: flex;
     justify-content: center;
