@@ -2069,6 +2069,7 @@ justify-content: space-between;
  }
  .similar_item_price .discount{
     font-size: 1.1rem;
+    text-decoration: line-through;
  }
  .similar_available{
     display: flex;
@@ -2076,7 +2077,7 @@ justify-content: space-between;
     font-size: 1rem;
  }
  .similar_available .item-stock {
-    margin: 0 50px 0 0;
+    margin: 0 30px 0 0;
  }
  .popup-form-wrap .popup-form.popup .product_property_range input[type=range]::-webkit-slider-runnable-track {
   

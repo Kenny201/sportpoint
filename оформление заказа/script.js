@@ -15,7 +15,7 @@ $(document).ready(function() {
   $('.bx-soa-section-content').on('click','.step_next', function(e) {
       e.preventDefault();
       let current = $(this),
-      next = current.parents('.bx-soa-section').next('.bx-soa-section').find('.bx-soa-section-content');  
+      next = current.parents('.bx-soa-section').next('.bx-soa-section:not("#bx-soa-basket")').find('.bx-soa-section-content');  
       let content = current.parents('.bx-soa-section-content');
       if ( next.find('.step_next').length || next.find('.step_prev').length){
           content.slideUp(350, "linear");
@@ -69,3 +69,98 @@ $(document).ready(function() {
     current.parents('.bx-soa-section').find('.bx-soa-section-content').show();
     });
 });
+jQuery.validator.addMethod("checkMaskPhone", function(value, element) {
+  return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value); 
+});	
+jQuery.validator.addMethod("checkNumber", function(value, element) {
+  return /\d/g.test(value); 
+});	
+$(function(){
+ $('#bx-soa-order-form').validate({
+  rules: {
+    name: {
+      required: true,
+      minlength: 2
+    },
+    family: {
+      required: true,
+      minlength: 2
+      },
+    email: {
+        required: true,
+        minlength: 2,
+        email: true,
+        },
+    tel: {
+      required: true,
+      minlength: 2,
+      checkMaskPhone: true,
+    },
+    adress_deliv: {
+      required: true,
+      minlength: 2
+    },
+    street: {
+      required: true,
+      minlength: 2,
+     
+    },
+    home: {
+      required: true,
+      minlength: 2,
+      checkNumber: true,
+    },
+    flat: {
+      required: true,
+      minlength: 2,
+      checkNumber: true,
+    },
+    },
+    messages: {
+      name: {
+        required: "Введите ваше имя",
+      },
+      family:{
+        required: "Введите вашу фамилию",
+      },
+      email: {
+        required: "Введите вашу почту",
+        email: "Ввведите корректный EMAIL"
+      },
+      tel: {
+        required: "Введите ваш телефон",
+        checkMaskPhone:"Номер телефона некорректный",
+      } ,
+      adress_deliv: {
+        required: "Введите адрес доставки",
+      },
+      street: {
+        required: "Укажите улицу",
+        
+      },
+      home: {
+        required: "Укажите ваш дом",
+        checkNumber: "Укажите корректный номер",
+      },
+      flat: {
+        required: "Укажите вашу квартиру",
+        checkNumber: "Укажите корректный номер",
+      },
+
+    },
+    submitHandler: function(form)
+    {
+      form.submit(function(event){
+        event.preventDefault(); 
+        if($('.bx-soa-customer-field').children('label .error').length > 0) {
+          
+          $(this).parents('.bx-soa-section').find('.bx-soa-section-content').show();
+        }
+      });
+    
+    }
+ });
+
+});
+
+
