@@ -140,7 +140,6 @@ $(document).ready(function() {
         next.find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>');
         next.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>');
         if (current.parents('.bx-soa-section').next('.bx-soa-section').attr('id') == 'bx-soa-basket' ){
-          
           next.find('.step_prev').show();
           next.find('.step_next').hide();
         }else{
@@ -160,8 +159,7 @@ $(document).ready(function() {
             prev.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
         } 
         if ($(this).parents('.bx-soa-section').attr('id') == 'bx-soa-basket'){
-              $(this).addClass('c-hide');
-              $(this).removeClass('c-show');
+              $(this).hide();
               prev.addClass('c-show');
         }else{
               prev.addClass('c-show');
