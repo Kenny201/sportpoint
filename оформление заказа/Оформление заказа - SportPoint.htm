@@ -7532,7 +7532,7 @@
 																		type="checkbox"
 																		class="bx-soa-pp-company-checkbox" value="40"
 																		checked="checked"></div>
-																<div class="field-value bx-soa-pp-company-smalltitle" lang="ru">
+																<div class=" bx-soa-pp-company-smalltitle" lang="ru">
 																	Почта (Почта Посылка-Онлайн)</div>
 																<div class="bx-soa-pp-delivery-cost">
 																	<div class="bx-soa-pp-list-termin" lang="ru">
@@ -7562,11 +7562,11 @@
 															</div>
 															<fieldset class="form-date">
 																<label for="data-start">Выберите дату доставки</label>
-																<input type="date" class="field-value" id="date-start" value="" required>
+																<input type="date" class="field-value" id="date_start" name="date_start" value="" required>
 															</fieldset>
 															<fieldset class="form-time">
 																<label for="time-start">Выберите время доставки</label>
-																<input type="time" class="field-value" id="time-start" value="" min="09:00"
+																<input type="time" class="field-value" id="time_start" name="time_start" value="" min="09:00"
 																	max="18:00" required>
 															</fieldset>
 
@@ -7596,7 +7596,7 @@
 																		type="checkbox"
 																		class="bx-soa-pp-company-checkbox" value="1"
 																		checked="checked"></div>
-																<div class=" field-value bx-soa-pp-company-smalltitle" lang="ru">
+																<div class=" bx-soa-pp-company-smalltitle" lang="ru">
 																	Наличными при получении</div>
 																<div class="bx-soa-pp-company-inject clearfix">
 																	<div class="col-sm-5 bx-soa-pp-desc-container">
@@ -7611,7 +7611,7 @@
 																		type="checkbox"
 																		class="bx-soa-pp-company-checkbox" value="7">
 																</div>
-																<div class=" field-value bx-soa-pp-company-smalltitle" lang="ru">
+																<div class="bx-soa-pp-company-smalltitle" lang="ru">
 																	Картой при получении</div>
 																<div class="bx-soa-pp-company-inject clearfix hidden">
 																</div>
@@ -7651,7 +7651,7 @@
 																	<input type="text" size="50" name="name"
 																		id="name" autocomplete="name"
 																		placeholder="Имя"
-																		class=" w-50  form-control bx-soa-customer-input bx-ios-fix" required>
+																		class=" w-50 field-value form-control bx-soa-customer-input bx-ios-fix" required>
 																</div>
 																<div class="soa-property-container">
 																<label for="family" class="bx-soa-custom-label">
@@ -7661,7 +7661,7 @@
 																	<input type="text"  size="50" name="family"
 																		id="family" autocomplete="name"
 																		placeholder="Фамилия"
-																		class=" w-50  form-control bx-soa-customer-input bx-ios-fix" required>
+																		class=" w-50  field-value form-control bx-soa-customer-input bx-ios-fix" required>
 																</div>
 
 															</div>
@@ -7676,7 +7676,7 @@
 																	<input type="text" size="50"  name="email"
 																		id="email" autocomplete="email"
 																		placeholder="E-Mail" 
-																		class="w-50  form-control bx-soa-customer-input bx-ios-fix" oninput='this.value=this.value.replace(/[а-яё]+$/iu,"")'
+																		class="w-50  field-value form-control bx-soa-customer-input bx-ios-fix" oninput='this.value=this.value.replace(/[а-яё]+$/iu,"")'
 																		required>
 																</div>
 																<div class="soa-property-container">
@@ -7687,8 +7687,8 @@
 																	<input type="tel" size="50"  name="tel"
 																		id="tel" autocomplete="tel"
 																		placeholder="Телефон"
-																		pattern='([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}'
-																		class="w-50  form-control bx-soa-customer-input bx-ios-fix"
+																		pattern='([0-9]{3})[0-9]{3}-[0-9]{2}-[0-9]{2}'
+																		class="w-50  field-value form-control bx-soa-customer-input bx-ios-fix"
 																		required>
 																</div>
 															</div>
@@ -7702,7 +7702,7 @@
 																		size="50" name="adress_deliv"
 																		id="adress_deliv"
 																		placeholder="Адрес доставки"
-																		class="form-control bx-soa-customer-input bx-ios-fix" required>
+																		class="form-control field-value bx-soa-customer-input bx-ios-fix" required>
 																</div>
 														
 																<div class="soa-property-container">
@@ -7713,7 +7713,7 @@
 																		size="50"  name="street"
 																		
 																		id="street" placeholder="Улица"
-																		class="form-control bx-soa-customer-input bx-ios-fix" required>
+																		class="form-control field-value bx-soa-customer-input bx-ios-fix" required>
 																</div>
 															</div>
 															<div class="form-group bx-soa-customer-field"
@@ -7725,7 +7725,7 @@
 																		*</span></label><input type="text" 
 																		size="30" name="home"
 																		id="home" placeholder="Дом"
-																		class="form-control bx-soa-customer-input bx-ios-fix" required>
+																		class="form-control field-value bx-soa-customer-input bx-ios-fix" required>
 																</div>
 																<div class="soa-property-container">
 																	<label for="flat"
@@ -7735,14 +7735,14 @@
 																	<input type="text" size="30" name="flat"
 																	
 																		id="flat" placeholder="Квартира"
-																		class="w-50  form-control w-50 bx-soa-customer-input bx-ios-fix" required>
+																		class="w-50  field-value form-control w-50 bx-soa-customer-input bx-ios-fix" required>
 																</div>
 																<div class="soa-property-container">
 																	<label for="structure"
 																	class="bx-soa-custom-label"> Строение</label>
 																	<input type="text" size="30" name="structure"
 																		id="structure" placeholder="Строение"
-																		class="w-50  form-control w-50 bx-soa-customer-input bx-ios-fix">
+																		class="w-50 form-control w-50 bx-soa-customer-input bx-ios-fix">
 
 																</div>
 															</div>
@@ -7926,7 +7926,7 @@
 											<div id="bx-soa-orderSave" class="lic_condition">
 												<button type="submit" style="margin: 10px 0"
 													class=" btn btn-default btn-lg hidden-xs has-ripple"
-													data-save-button="true"> Оформить заказ </button>
+													data-save-button="true" > Оформить заказ </button>
 											</div>
 											<div style="display: none;">
 												<div id="bx-soa-basket-hidden" class="bx-soa-section">
