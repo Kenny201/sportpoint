@@ -57,9 +57,18 @@
 	flex-direction: column;
 }
 
+.bx-soa-section-content label.error{
+	position: relative;
+	display: block;
+	top:0;
+	font-size: 13px;
+}
 input:invalid {
 	border: 2px dashed red;
 
+}
+.field-value.error{
+	border:1px solid red;
 }
 #bx-soa-properties input:invalid:focus{
 	border: 2px dashed red;

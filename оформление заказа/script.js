@@ -1,12 +1,15 @@
 $("#tel").mask("+7(999) 999-9999");
 $(function(){
   $('#bx-soa-order-form').validate({
+   
    rules: {
      date_start:{
       required: true,
+      minlength: 2
      },
      time_start:{
       required: true,
+      minlength: 2
      },
      name: {
        required: true,
@@ -18,17 +21,17 @@ $(function(){
        },
      email: {
          required: true,
-         minlength: 2,
          email: true,
+         minlength: 2,
          },
      tel: {
        required: true,
-       minlength: 2,
        checkMaskPhone: true,
+       minlength: 2,
      },
      adress_deliv: {
        required: true,
-       minlength: 2
+       minlength: 2,
      },
      street: {
        required: true,
@@ -37,56 +40,67 @@ $(function(){
      },
      home: {
        required: true,
-       minlength: 2,
        checkNumber: true,
+       minlength: 2,
      },
      flat: {
        required: true,
-       minlength: 2,
        checkNumber: true,
+       minlength: 2,
      },
      },
      messages: {
       date_start:{
         required: "Укажите дату доставки",
+        date: "Укажите верый диапозон",
+        minlength: "Заполните поле",
        },
        time_start:{
         required: "Укажите время доставки",
+        max: "Мы работаем до 18:00",
+        min: "Мы работаем с 9:00",
+        
        },
        name: {
          required: "Введите ваше имя",
+         minlength: "Введите ваше имя",
        },
        family:{
          required: "Введите вашу фамилию",
+         minlength: "Введите вашу фамилию",
        },
        email: {
-         required: "Введите вашу почту",
-         email: "Ввведите корректный EMAIL"
+         required: "Укажите вашу почту",
+         email: "Ввведите корректный EMAIL",
+         minlength: "Укажите вашу почту",
        },
        tel: {
          required: "Введите ваш телефон",
          checkMaskPhone:"Номер телефона некорректный",
+         minlength: "Укажите ваш телефон",
        } ,
        adress_deliv: {
          required: "Введите адрес доставки",
+         minlength: "Введите адрес доставки",
        },
        street: {
          required: "Укажите улицу",
-         
+         minlength: "Укажите улицу",
        },
        home: {
          required: "Укажите ваш дом",
          checkNumber: "Укажите корректный номер",
+         minlength: "Укажите ваш дом",
        },
        flat: {
          required: "Укажите вашу квартиру",
          checkNumber: "Укажите корректный номер",
+         minlength: "Укажите вашу квартиру",
        },
- 
-     }
+     },
   });
- 
  });
+
 $(document).on('click', '.bx-soa .licence_block label.license', function(){
                     var id = $(this).data('for');
                     $('.bx-soa .licence_block label.error').toggleClass('hidden');
@@ -99,6 +113,7 @@ $(document).on('click', '.bx-soa .licence_block label.license', function(){
                       BX.Sale.OrderAjaxComponent.state_licence = '';
                     }
 });
+
 $(document).ready(function() {
   $('.bx-soa-section-content').on('click','.step_next', function(e) {
       e.preventDefault();
@@ -115,21 +130,17 @@ $(document).ready(function() {
         content.removeClass('show');
         next.addClass('show');
         next.removeClass('hide');
-        next.find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>')
-        next.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
+        next.find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>');
+        next.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>');
         if (current.parents('.bx-soa-section').next('.bx-soa-section').attr('id') == 'bx-soa-basket' ){
           
           next.find('.step_prev').show();
           next.find('.step_next').hide();
-          $('#bx-soa-orderSave button').removeAttr('disabled');
         }else{
           next.find('.step_prev').show();
           next.find('.step_next').show();
         }
       } 
-      let valueInputCity = current.parents('.bx-soa-section').find('.field-value').val();
-      
-      console.log(valueInputCity);
   });
     $('.bx-soa-section-content').on('click', '.step_prev', function (e) {
         e.preventDefault();
@@ -173,17 +184,22 @@ jQuery.validator.addMethod("checkNumber", function(value, element) {
 });	
 
 $('#bx-soa-order-form').submit(function(event){
- 
+    console.log(!$('#bx-soa-order-form').valid());
+    
     if (!$('#bx-soa-order-form').valid()) { 
+      
       event.preventDefault();
-
       if($('.field-value.error').length > 0) {
-        $('.field-value.error').css("border","1px solid red");
+        $('.field-value.error');
         let next = $('.field-value.error').parents('.bx-soa-section-content');  
-        console.log(next);
-        next.find('.step_prev').show();
-        next.find('.step_next').show();
         next.addClass('show');
+        if ( next.find('.step_next').length || next.find('.step_prev').length){
+          next.find('.step_prev').show();
+          next.find('.step_next').show();
+        }else {
+          next.find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>')
+          next.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
+        }
       }
      }
 });
