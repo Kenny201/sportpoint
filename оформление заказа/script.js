@@ -1,4 +1,11 @@
 $("#tel").mask("+7(999) 999-9999");
+jQuery.validator.addMethod("checkMaskPhone", function(value, element) {
+  return /\+\d{1}\(\d{3}\) \d{3}-\d{4}/g.test(value); 
+});	
+jQuery.validator.addMethod("checkNumber", function(value, element) {
+  return /\d/g.test(value); 
+});	
+
 $(function(){
   $('#bx-soa-order-form').validate({
    
@@ -121,15 +128,15 @@ $(document).ready(function() {
       next = current.parents('.bx-soa-section').next('.bx-soa-section').find('.bx-soa-section-content');  
       let content = current.parents('.bx-soa-section-content');
       if ( next.find('.step_next').length || next.find('.step_prev').length){
-          content.addClass('hide');
-          content.removeClass('show');
-          next.addClass('show');
+          content.addClass('c-hide');
+          content.removeClass('c-show');
+          next.addClass('c-show');
           next.find('.step_prev').show();
       }else {
-        content.addClass('hide');
-        content.removeClass('show');
-        next.addClass('show');
-        next.removeClass('hide');
+        content.addClass('c-hide');
+        content.removeClass('c-show');
+        next.addClass('c-show');
+        next.removeClass('c-hide');
         next.find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>');
         next.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>');
         if (current.parents('.bx-soa-section').next('.bx-soa-section').attr('id') == 'bx-soa-basket' ){
@@ -153,14 +160,14 @@ $(document).ready(function() {
             prev.find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
         } 
         if ($(this).parents('.bx-soa-section').attr('id') == 'bx-soa-basket'){
-              $(this).addClass('hide');
-              $(this).removeClass('show');
-              prev.addClass('show');
+              $(this).addClass('c-hide');
+              $(this).removeClass('c-show');
+              prev.addClass('c-show');
         }else{
-              prev.addClass('show');
-              prev.removeClass('hide');
-              content.addClass('hide');
-              content.removeClass('show');
+              prev.addClass('c-show');
+              prev.removeClass('c-hide');
+              content.addClass('c-hide');
+              content.removeClass('c-show');
         }
   });
   $('.bx-soa > .bx-soa-section:not("#bx-soa-basket") .bx-soa-section-title-container').click(function(){
@@ -171,28 +178,20 @@ $(document).ready(function() {
       current.parents('.bx-soa-section').find('.step_wrap').prepend('<div class="step_next"> <button class="btn btn-default"> Далее </button></div></div>')
       current.parents('.bx-soa-section').find('.step_wrap').prepend('<div class="step_prev"> <button class="btn btn-default"> Назад </button></div></div>')
     }
-    current.parents('.bx-soa').find('.bx-soa-section:not("#bx-soa-basket")').find('.bx-soa-section-content').removeClass('show');
-    current.parents('.bx-soa').find('.bx-soa-section:not("#bx-soa-basket")').find('.bx-soa-section-content').addClass('hide');
-    current.parents('.bx-soa-section').find('.bx-soa-section-content').addClass('show');
+    current.parents('.bx-soa').find('.bx-soa-section:not("#bx-soa-basket")').find('.bx-soa-section-content').removeClass('c-show');
+    current.parents('.bx-soa').find('.bx-soa-section:not("#bx-soa-basket")').find('.bx-soa-section-content').addClass('c-hide');
+    current.parents('.bx-soa-section').find('.bx-soa-section-content').addClass('c-show');
     });
 });
-jQuery.validator.addMethod("checkMaskPhone", function(value, element) {
-  return /\+\d{1}\(\d{3}\) \d{3}-\d{4}/g.test(value); 
-});	
-jQuery.validator.addMethod("checkNumber", function(value, element) {
-  return /\d/g.test(value); 
-});	
 
 $('#bx-soa-order-form').submit(function(event){
-    console.log(!$('#bx-soa-order-form').valid());
-    
+
     if (!$('#bx-soa-order-form').valid()) { 
-      
       event.preventDefault();
       if($('.field-value.error').length > 0) {
         $('.field-value.error');
-        let next = $('.field-value.error').parents('.bx-soa-section-content');  
-        next.addClass('show');
+        let next = $('.field-value.error').parents('.bx-soa-section-content').last();  
+        next.addClass('c-show');
         if ( next.find('.step_next').length || next.find('.step_prev').length){
           next.find('.step_prev').show();
           next.find('.step_next').show();

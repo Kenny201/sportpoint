@@ -214,18 +214,24 @@ input:invalid {
 	position: relative;
 	top:0;
 }
-.hide {
+.c-hide {
     position: absolute !important;
     top: -9999px !important;
-    left: -9999px !important;
     visibility: hidden !important;
+	opacity:0;
+    transition:opacity .2s linear !important;
+
 }
-.show{
+.c-show{
 	position: relative !important;
     top: 0 !important;
     left: 0 !important;
     visibility: visible !important;
+	opacity:1;
+    transition: opacity .2s linear !important;
 }
+
+
 #bx-soa-orderSave{
 	display: flex;
 	justify-content: center;
@@ -326,6 +332,7 @@ input:invalid {
 	}
 	#bx-soa-order .bx-soa-section .bx-soa-section-content{
 		padding: 0 33px 25px 84px;
+
 	}
 	#bx-soa-order-form #bx-soa-order{
 		display: block;
