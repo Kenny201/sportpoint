@@ -7,7 +7,7 @@
 .cart-wrap, .popup-form-wrap
 {
 	font-family: "Montserrat", Arial, sans-serif;
-    font-size: 13px;
+
 }
 .product-review .rating {
 	margin: 0 15px 0 0;
@@ -251,7 +251,7 @@
 	-webkit-justify-content: space-between;
 	        justify-content: space-between;
 	margin-bottom: 10px;
-	font-size: 1.08em;
+	font-size: 1em;
 }
 
 summary.product_property_title {
@@ -702,7 +702,7 @@ summary.product_property_title {
 	border: none;
 	color: #fff;
 	text-transform: uppercase;
-	font-size: 0.93em;
+	font-size: 0.85em;
 	font-weight: bold;
 }
 
@@ -2185,7 +2185,10 @@ details[open] summary~* {
 
 
 @media (min-width: 576px) {
-   
+	.reviews_button button {
+
+		font-size: 0.93em;
+	}
 	.reviews_property_wrap .product_property_range input[type=range]::-ms-track {
 		background-size: contain;
 	}
@@ -2414,9 +2417,8 @@ details[open] summary~* {
 		font-size: 1em;
 	}
 
-	.section_title,
 	.section_title h3 {
-		font-size: 1.85rem;
+		font-size: 1.6rem;
 	}
 
 	.reviews_rating_block {
@@ -2653,7 +2655,7 @@ details[open] summary~* {
 
 	.reviews_item {
 		padding: 30px;
-		font-size: 1.1em;
+		font-size: .93em;
 	}
 
 	.similar_item_image .section-gallery-wrapper {
@@ -2810,7 +2812,7 @@ details[open] summary~* {
 	}
 
 	.reviews_item {
-		font-size: 1.08em;
+		font-size: .93em;
 	}
 
 	.reviews_item_description {
