@@ -1,0 +1,68 @@
+
+; /* Start:"a:4:{s:4:"full";s:90:"/local/templates/aspro_max/components/teamprofi/empty/table.sizes/script.js?16184010241823";s:6:"source";s:75:"/local/templates/aspro_max/components/teamprofi/empty/table.sizes/script.js";s:3:"min";s:0:"";s:3:"map";s:0:"";}"*/
+/**
+ * прокрутка таблиц размеров
+ */
+function initScrollTables()
+{
+	$( '.js-scroll-table' ).each( function() {
+		var $this = $( this );
+
+		if( $this.hasClass( 'initialized' ) && !$this.hasClass( 'js-size-table-scroll' ) )
+			return;
+
+		var $wrap = $this.closest( '.js-stock-table' );
+		var $scrollbar = $wrap.find( '.js-scrollbar' );
+
+		var sly = new Sly( $this, {
+			horizontal: true,
+			itemNav: 'basic',
+			smart: true,
+			mouseDragging: true,
+			touchDragging: true,
+			releaseSwing: true,
+			speed: 300,
+			scrollBar: $scrollbar,
+			keyboardNavBy: 'pages',
+			dragHandle: true,
+			dynamicHandle: true,
+			activatePageOn: 'click',
+			clickBar: true,
+			itemSelector: true,
+			easing: 'easeOutExpo',
+			draggedClass: 'dragged', // Class for dragged elements (like SLIDEE or scrollbar handle).
+			activeClass: 'active',  // Class for active items and pages.
+			disabledClass: 'disabled' // Class for disabled navigation elements.
+		} );
+
+		sly.on( 'load move', function() {
+			$( this.frame ).addClass( 'initialized' );
+
+			if( sly.pos.start === sly.pos.end )
+				$scrollbar.addClass( 'invisible' );
+			else
+				$scrollbar.removeClass( 'invisible' );
+		} );
+
+		if( $this.hasClass( 'js-size-table-scroll' ) && !$this.hasClass( 'initialized' ) )
+			sly.init();
+		else if( !$this.hasClass( 'initialized' ) )
+			sly.init();
+
+		$( window ).on( 'resize', function() {
+			sly.reload();
+		} );
+	} );
+}
+
+/**
+ * ховер таблицы размеров
+ */
+$( document ).delegate( '.js-item-table-size' ,'mouseover mouseleave', function() {
+	var curIndex = $(this).index() - 1;
+	$(this).toggleClass('stock-block__size-current');
+	$(this).prevAll().toggleClass('stock-block__size-prev');
+	$(this).parent().prevAll().find('.js-item-table-size:eq(' + curIndex + ')').toggleClass('stock-block__size-prev');
+});
+/* End */
+;; /* /local/templates/aspro_max/components/teamprofi/empty/table.sizes/script.js?16184010241823*/
