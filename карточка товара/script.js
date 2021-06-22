@@ -1,8 +1,14 @@
         const range = RangeTouch.setup('input[type="range"]');
         $('summary.product_property_title').click(function() {
+            
             $(this).find('.product_property_open').toggleClass('property_open');
-            $('summary.product_property_title').not($(this)).find('.product_property_open').addClass('property_open')
+
+        });
+        $('details').click(function(){
+            $('details').not($(this)).removeAttr("open");
+            $('details').not($(this)).find('.product_property_open').removeClass('property_open');
         })
+
         $(document).ready(function() {
             $('.product-dtl-gallery .owl-carousel').owlCarousel({
 
